@@ -43,8 +43,8 @@ function scoresAverage(moviesArray) {
 
     if(score != 0 ){
     score = (score / moviesArray.length);
- 
     }
+    const result =   Math.round(score*100)/100;
     if(moviesArray.length != 0){
     return score;
     }else{
@@ -71,8 +71,9 @@ function dramaMoviesScore(moviesArray) {
         score = (score / dramaWithScore.length);
      
         }
+        const  result =   Math.round(score*100)/100;
         if(moviesArray.length != 0){
-        return score;
+        return result;
         }else{
             return 0;
         }
@@ -81,7 +82,32 @@ function dramaMoviesScore(moviesArray) {
 }
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-function orderByYear(moviesArray) {}
+function orderByYear(moviesArray) {
+
+    //tosorted
+
+    const arrayPerYear = 
+    moviesArray.toSorted((a, b) =>{
+        if(a.year === b.year){
+            if (a.title.toUpperCase() < b.title.toUpperCase()) {
+                return -1;
+              }
+              if (a.title.toUpperCase() > b.title.toUpperCase()) {
+                return 1;
+              }
+              
+        }else{
+        return a.year - b.year ;
+    }
+    } );
+
+
+    console.log(moviesArray);
+    console.log(arrayPerYear);
+
+
+    return arrayPerYear;
+}
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 function orderAlphabetically(moviesArray) {}
