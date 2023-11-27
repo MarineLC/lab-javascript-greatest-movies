@@ -42,9 +42,9 @@ function scoresAverage(moviesArray) {
     }, 0);
 
     if(score != 0 ){
-    score = (score / moviesArray.length);
+    score = Math.round(score / moviesArray.length*100)/100;
     }
-    const result =   Math.round(score*100)/100;
+ 
     if(moviesArray.length != 0){
     return score;
     }else{
@@ -112,8 +112,7 @@ function orderAlphabetically(moviesArray) {
               if (a.title.toUpperCase() > b.title.toUpperCase()) {
                 return 1;
               }
-              
-       
+   
     }).map((currentMovie) => {
         return currentMovie.title;
     });;
@@ -127,14 +126,13 @@ function orderAlphabetically(moviesArray) {
         return arrayPeralphabet;
     }
 
-    
-
-
-
 }
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
-function turnHoursToMinutes(moviesArray) {}
+function turnHoursToMinutes(moviesArray) {
+
+
+}
 
 // BONUS - Iteration 8: Best yearly score average - Best yearly score average
 function bestYearAvg(moviesArray) {}
